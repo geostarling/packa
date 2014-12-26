@@ -1,35 +1,91 @@
 
 package org.geostarling.packa.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
+@JsonIgnoreProperties(
+        ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ChannelInfo {
+
+    @JsonProperty("ATSCMajorChan")
     private String aTSCMajorChan;
+
+    @JsonProperty("ATSCMinorChan")
     private String aTSCMinorChan;
+
+    @JsonProperty("CallSign")
     private String callSign;
+
+    @JsonProperty("ChanFilters")
     private String chanFilters;
+
+    @JsonProperty("ChanId")
     private String chanId;
+
+    @JsonProperty("ChanNum")
     private String chanNum;
+
+    @JsonProperty("ChannelName")
     private String channelName;
+
+    @JsonProperty("CommFree")
     private String commFree;
+
+    @JsonProperty("DefaultAuth")
     private String defaultAuth;
+
+    @JsonProperty("FineTune")
     private String fineTune;
+
+    @JsonProperty("Format")
     private String format;
+
+    @JsonProperty("Frequency")
     private String frequency;
+
+    @JsonProperty("FrequencyId")
     private String frequencyId;
+
+    @JsonProperty("FrequencyTable")
     private String frequencyTable;
+
+    @JsonProperty("IconURL")
     private String iconURL;
+    @JsonProperty("InputId")
+
     private String inputId;
+
+    @JsonProperty("Modulation")
     private String modulation;
+
+    @JsonProperty("MplexId")
     private String mplexId;
+
+    @JsonProperty("NetworkId")
     private String networkId;
+
+    @JsonProperty("Programs")
     private List programs;
+
+    @JsonProperty("SIStandard")
     private String sIStandard;
+
+    @JsonProperty("ServiceId")
     private String serviceId;
+    @JsonProperty("SourceId")
     private String sourceId;
+    @JsonProperty("TransportId")
     private String transportId;
+    @JsonProperty("UseEIT")
     private String useEIT;
+    @JsonProperty("Visible")
     private String visible;
+    @JsonProperty("XMLTVID")
     private String xMLTVID;
 
     public String getATSCMajorChan() {
@@ -246,5 +302,39 @@ public class ChannelInfo {
 
     public void setXMLTVID(String xMLTVID) {
         this.xMLTVID = xMLTVID;
+    }
+
+
+    @Override
+    public String toString() {
+        return "ChannelInfo{" +
+                "aTSCMajorChan='" + aTSCMajorChan + '\'' +
+                ", aTSCMinorChan='" + aTSCMinorChan + '\'' +
+                ", callSign='" + callSign + '\'' +
+                ", chanFilters='" + chanFilters + '\'' +
+                ", chanId='" + chanId + '\'' +
+                ", chanNum='" + chanNum + '\'' +
+                ", channelName='" + channelName + '\'' +
+                ", commFree='" + commFree + '\'' +
+                ", defaultAuth='" + defaultAuth + '\'' +
+                ", fineTune='" + fineTune + '\'' +
+                ", format='" + format + '\'' +
+                ", frequency='" + frequency + '\'' +
+                ", frequencyId='" + frequencyId + '\'' +
+                ", frequencyTable='" + frequencyTable + '\'' +
+                ", iconURL='" + iconURL + '\'' +
+                ", inputId='" + inputId + '\'' +
+                ", modulation='" + modulation + '\'' +
+                ", mplexId='" + mplexId + '\'' +
+                ", networkId='" + networkId + '\'' +
+                ", programs=" + programs +
+                ", sIStandard='" + sIStandard + '\'' +
+                ", serviceId='" + serviceId + '\'' +
+                ", sourceId='" + sourceId + '\'' +
+                ", transportId='" + transportId + '\'' +
+                ", useEIT='" + useEIT + '\'' +
+                ", visible='" + visible + '\'' +
+                ", xMLTVID='" + xMLTVID + '\'' +
+                '}';
     }
 }

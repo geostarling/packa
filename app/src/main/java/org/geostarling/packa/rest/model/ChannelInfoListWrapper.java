@@ -1,11 +1,13 @@
 package org.geostarling.packa.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by watanabe on 12/24/14.
  */
 public class ChannelInfoListWrapper {
 
-    //ChannelInfoList
+    @JsonProperty("ChannelInfoList")
     private ChannelInfoList channelInfoList;
 
     public ChannelInfoList getChannelInfoList() {

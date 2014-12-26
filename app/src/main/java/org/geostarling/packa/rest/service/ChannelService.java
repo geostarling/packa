@@ -22,13 +22,14 @@ public class ChannelService {
         RestTemplate restTemplate = Util.getRestTemplate();
 
         UriComponentsBuilder builder = Util.getUriBuilder(Constants.bePort, Constants.getChannelInfoListUrl);
-        UriComponents uriComps = builder.build();
+
         Map<String, String> vars = new HashMap<String, String>();
 
         vars.put("sourceId", "1");
         vars.put("startIdx", "1");
         vars.put("count", "100");
-        uriComps.expand(vars);
+
+        UriComponents uriComps = builder.buildAndExpand(vars);
 
         ChannelInfoListWrapper result = restTemplate.getForObject(uriComps.toUriString(), ChannelInfoListWrapper.class);
         return result.getChannelInfoList();

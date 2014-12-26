@@ -1,34 +1,70 @@
 
 package org.geostarling.packa.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
+
+@JsonIgnoreProperties(
+        ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+
 public class Program {
+
+    @JsonProperty("Airdate")
     private String airdate;
+    @JsonProperty("Artwork")
     private Artwork artwork;
+    @JsonProperty("AudioProps")
     private String audioProps;
+    @JsonProperty("CatType")
     private String catType;
+    @JsonProperty("Category")
     private String category;
+    @JsonProperty("Channel")
     private ChannelInfo channel;
+    @JsonProperty("Description")
     private String description;
+    @JsonProperty("EndTime")
     private String endTime;
+    @JsonProperty("Episode")
     private String episode;
+    @JsonProperty("FileName")
     private String fileName;
+    @JsonProperty("FileSize")
     private String fileSize;
+    @JsonProperty("HostName")
     private String hostName;
+    @JsonProperty("Inetref")
     private String inetref;
+    @JsonProperty("LastModified")
     private String lastModified;
+    @JsonProperty("ProgramFlags")
     private String programFlags;
+    @JsonProperty("ProgramId")
     private String programId;
+    @JsonProperty("Recording")
     private Recording recording;
+    @JsonProperty("Repeat")
     private String repeat;
+    @JsonProperty("Season")
     private String season;
+    @JsonProperty("SeriesId")
     private String seriesId;
+    @JsonProperty("Stars")
     private String stars;
+    @JsonProperty("StartTime")
     private String startTime;
+    @JsonProperty("SubProps")
     private String subProps;
+    @JsonProperty("subTitle")
     private String subTitle;
+    @JsonProperty("Title")
     private String title;
+    @JsonProperty("VideoProps")
     private String videoProps;
 
     public String getAirdate() {
@@ -237,5 +273,37 @@ public class Program {
 
     public void setVideoProps(String videoProps) {
         this.videoProps = videoProps;
+    }
+
+    @Override
+    public String toString() {
+        return "Program{" +
+                "airdate='" + airdate + '\'' +
+                ", artwork=" + artwork +
+                ", audioProps='" + audioProps + '\'' +
+                ", catType='" + catType + '\'' +
+                ", category='" + category + '\'' +
+                ", channel=" + channel +
+                ", description='" + description + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", episode='" + episode + '\'' +
+                ", fileName='" + fileName + '\'' +
+                ", fileSize='" + fileSize + '\'' +
+                ", hostName='" + hostName + '\'' +
+                ", inetref='" + inetref + '\'' +
+                ", lastModified='" + lastModified + '\'' +
+                ", programFlags='" + programFlags + '\'' +
+                ", programId='" + programId + '\'' +
+                ", recording=" + recording +
+                ", repeat='" + repeat + '\'' +
+                ", season='" + season + '\'' +
+                ", seriesId='" + seriesId + '\'' +
+                ", stars='" + stars + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", subProps='" + subProps + '\'' +
+                ", subTitle='" + subTitle + '\'' +
+                ", title='" + title + '\'' +
+                ", videoProps='" + videoProps + '\'' +
+                '}';
     }
 }

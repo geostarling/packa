@@ -23,11 +23,10 @@ public class RecordingService {
         RestTemplate restTemplate = Util.getRestTemplate();
 
         UriComponentsBuilder builder = Util.getUriBuilder(Constants.bePort, Constants.getRecordedListUrl);
-        UriComponents uriComps = builder.build();
         Map<String, String> vars = new HashMap<String, String>();
         vars.put("startIdx", "1");
         vars.put("count", "100");
-        uriComps.expand(vars);
+        UriComponents uriComps = builder.buildAndExpand(vars);
 
         ProgramListWrapper result = restTemplate.getForObject(uriComps.toUriString(), ProgramListWrapper.class);
         return result.getProgramList();
